@@ -5,4 +5,6 @@ const router = express.Router();
 
 router.get('/health', productController.getApiHealth);
 
+router.get("/", productController.getAllProducts);
+
 module.exports = router;
