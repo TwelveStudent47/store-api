@@ -6,7 +6,7 @@ exports.getApiHealth = (req, res) => {
 
 exports.getAllProducts = async (req, res) => {
     try {
-        const products = await Product.find();
+        const products = await Product.find(req.query);
         res.status(200).json({ success: true, nbHits: products.length, data: products });
     } catch (err) {
         res.status(500).json({ error: 'Server error' });
